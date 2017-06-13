@@ -1,0 +1,11 @@
+{% load static %}
+{% if student %}
+<ul>
+  <li>Student Name: {{student.first_name}} {{student.last_name}}</li>
+  <li>Date of Birth: {{student.date_of_birth}}</li>
+  <li>From: {{student.where_from}}</li>
+  <li>Email: {{student.email}}</li>
+</ul>
+{% else %}
+  <p>No detais.</p>
+{% endif %}

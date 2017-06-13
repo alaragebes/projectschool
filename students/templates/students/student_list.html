@@ -1,0 +1,8 @@
+{% load static %}
+{% if students %}
+  {% for student in students %}
+  <li><a href="/students/detail/">{{student.first_name}} {{student.last_name}}</a></li>
+  {% endfor %}
+{% else %}
+<p>No students available.</p>
+{% endif %}
