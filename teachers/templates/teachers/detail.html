@@ -1,0 +1,11 @@
+{% load static %}
+{% if teacher %}
+<ul>
+  <li>Teacher Name: {{teacher.first_name}}  {{teacher.last_name}}</li>
+  <li>Subject Area: {{teacher.subject_area}}</li>
+  <li>From: {{teacher.where_from}}</li>
+  <li>Date of Birth: {{teacher.date_of_birth}}</li>
+</ul>
+{% else %}
+  <p>No details.</p>
+{% endif %}

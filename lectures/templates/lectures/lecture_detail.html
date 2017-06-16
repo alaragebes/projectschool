@@ -1,0 +1,10 @@
+{% load static %}
+{% if lecture %}
+  <ul>
+    <li>Lecture Name: {{lecture.lecture_name}}</li>
+    <li>Subject Area: {{lecture.subject_area}}</li>
+    <li>Lecture Code: {{lecture.lecture_code}}</li>
+  </ul>
+{% else %}
+  <p>No details posted about the lecture. Try contacting the department.</p>
+{% endif %}

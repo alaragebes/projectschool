@@ -1,8 +1,38 @@
 {% load static %}
 {% if students %}
-  {% for student in students %}
-  <li><a href="/students/detail/">{{student.first_name}} {{student.last_name}}</a></li>
-  {% endfor %}
+  <head>
+  <style>
+  table, th, td {
+    border : 2px solid black;
+    border-collapse : collapse;
+  }
+  th , td {
+    padding : 5px;
+    text-align : left;
+  }
+  </style>
+  </head>
+  <body>
+    <table style = "width : 100%">
+      <caption>Student Table</caption>
+      <tr>
+        <th>Student Name</th>
+        <th>Date of Birth</th>
+        <th>From</th>
+        <th>Lecture Name</th>
+      </tr>
+
+      {% for student in students %}
+      <tr>
+        <td><a href="/students/detail/?pk={{student.id}}">{{student.first_name}} {{student.last_name}}</a></td>
+        <td>{{student.date_of_birth}}</td>
+        <td>{{student.where_from}}</td>
+        <td>{{student.lecture.lecture_name}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+
 {% else %}
 <p>No students available.</p>
 {% endif %}

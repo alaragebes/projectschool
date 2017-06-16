@@ -1,0 +1,9 @@
+<form method='post'>
+  {% csrf_token %}
+  <ul>
+    <li>Lecture Name: {{form.lecture_name}}</li>
+    <li>Subject Area: {{form.subject_area}}</li>
+    <li>Lecture Code: {{form.lecture_code}}</li>
+  </ul>
+<input type="submit" value="Submit"/>
+</form>

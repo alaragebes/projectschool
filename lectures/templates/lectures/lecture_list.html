@@ -1,0 +1,36 @@
+{% load static %}
+{% if lectures %}
+  <head>
+  <style>
+    table, th, td {
+      border : 2px solid black;
+      border-collapse : collapse;
+    }
+    th, td {
+      padding : 5px;
+      text-align : left;
+    }
+  </style>
+  </head>
+  <body>
+
+  <table style = "width : 100%">
+    <caption>Lecture Table</caption>
+      <tr>
+        <th>Lecture Name</th>
+        <th>Subject Area</th>
+        <th>Lecture Code</th>
+      </tr>
+
+      {% for lecture in lectures %}
+      <tr>
+        <td><a href="/lectures/detail/?pk={{ lecture.id }}">{{lecture.lecture_name}}</a></td>
+        <td>{{lecture.subject_area}}</td>
+        <td>{{lecture.lecture_code}}</td>
+      </tr>
+
+  </body>
+  {% endfor %}
+{% else %}
+  <p>No lectures to be found.</p>
+{% endif %}

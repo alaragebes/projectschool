@@ -1,0 +1,11 @@
+<form method = 'post'>
+{% csrf_token %}
+<ul>
+  <li>First Name: {{form.first_name}}</li>
+  <li>Last Name: {{form.last_name}}</li>
+  <li>Subject Area: {{form.subject_area}}</li>
+  <li>From: {{form.where_from}}</li>
+  <li>Date of Birth: {{form.date_of_birth}}</li>
+</ul>
+<input type="submit" value="Submit"/>
+</form>

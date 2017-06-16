@@ -1,0 +1,39 @@
+{% load static %}
+{% if teachers %}
+<head>
+<style>
+table, th, td {
+  border: 2px solid black;
+  border-collapse : collapse;
+}
+th, td {
+  padding : 5px;
+  text-align: left;
+}
+</style>
+</head>
+<body>
+<table style = "width:100%">
+<caption>Teacher Table</caption>
+  <tr>
+    <th>Teacher Name</th>
+    <th>Date of Birth</th>
+    <th>From</th>
+    <th>Lecture Code</th>
+  </tr>
+
+  {% for teacher in teachers %}
+  <tr>
+    <td><a href="/teachers/detail/?pk={{teacher.id}}">{{ teacher.first_name }} {{ teacher.last_name }}</a></td>
+    <td>{{teacher.date_of_birth}}</td>
+    <td>{{teacher.where_from}}</td>
+    <td>{{teacher.lecture.lecture_code}}</td>
+  </tr>
+  {% endfor %}
+
+</table>
+</body>
+
+{% else %}
+<p>No teachers to be found.</p>
+{% endif %}
